@@ -1,10 +1,10 @@
 <template>
   <v-app-bar
     :elevation="1"
-    color="#fdfdfd"
+    style="background: linear-gradient(to bottom, #fdfdfd, #7dd5ed);"
     class="py-2 flex items-center justify-between"
   >
-    <img src="../../assets/icons8-sun-50.png" alt="" class="mx-2"/>
+    <img src="../../assets/icons8-partly-cloudy-day.gif" alt="" class="mx-2"/>
     <v-app-bar-nav @click="onSidebarToggle" class="me-auto">
       <h2 class="mx-3" style="font-weight: 600">{{ t("weather") }}</h2>
     </v-app-bar-nav>

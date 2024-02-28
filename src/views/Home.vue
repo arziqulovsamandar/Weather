@@ -96,10 +96,12 @@
     </div>
 
     <div style="width: 70%">
-      <h1>{{ cityName.name }}</h1>
+      <h1 style="color: white">{{ cityName.name }}</h1>
       <div style="display: flex; gap: 10px">
-        <h3>{{ currentDayName }}</h3>
-        <h4 style="margin: 3px">{{ daysInWeek[0] }}-{{ nextSundayYear }}</h4>
+        <h3 style="color: rgb(122, 198, 245)">{{ currentDayName }}</h3>
+        <h4 style="margin: 3px; color: rgb(0, 187, 255)">
+          {{ daysInWeek[0] }}-{{ nextSundayYear }}
+        </h4>
       </div>
       <div v-if="!weatherData">
         <loading />
@@ -119,15 +121,15 @@
             style="width: 100px; height: 100px"
           />
         </div>
-        <p v-if="weatherData && weatherData.current">
+        <p v-if="weatherData && weatherData.current" style="color: white">
           Namlik: {{ weatherData.current.humidity }}%
         </p>
-        <p v-if="weatherData && weatherData.current">
+        <p v-if="weatherData && weatherData.current" style="color: white">
           Shamol tezligi: {{ weatherData.current.wind_speed }} km/h
         </p>
       </div>
       <div class="days">
-        <v-table class="my-2" style="background-color: rgb(183, 205, 205)">
+        <v-table class="my-2" style="background: linear-gradient(to bottom, #65ceff, #ffd54f);">
           <thead>
             <tr>
               <th
@@ -216,9 +218,7 @@ onMounted(() => {
   for (let i = 0; i < 8; i++) {
     const nextDay = new Date();
     nextDay.setDate(nextDay.getDate() + i);
-    const dateStr = `${nextDay.getDate()}-${
-      nextDay.getMonth() + 1
-    }`;
+    const dateStr = `${nextDay.getDate()}-${nextDay.getMonth() + 1}`;
     daysInWeek.push(dateStr);
   }
 });
@@ -275,7 +275,6 @@ const fetchWeatherData = async () => {
   border-radius: 10px;
   padding: 10px;
   width: 25%;
-  background-color: rgb(233, 239, 239);
 }
 .menu {
   display: flex;
